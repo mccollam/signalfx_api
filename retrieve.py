@@ -1,9 +1,13 @@
 import sfx
 import json
 import os
+import sys
 
-# Set this to the ID of the dashboard to clone:
-dashboard_id = "DASHBOARD_ID"
+if (len(sys.argv) < 2):
+    print("You must provide the dashboard ID to retrieve.")
+    exit()
+
+dashboard_id = sys.argv[1]
 
 # Grab the requested dashboard
 dashboard_str = sfx.get_dashboard(dashboard_id)
@@ -25,3 +29,5 @@ for chart in dashboard['charts']:
     f = open(chartpath + str(chart["chartId"]) + ".json", "w")
     f.write(chart_str)
     f.close()
+
+print("Dashboard and charts written to '" + chartpath + "'.")
