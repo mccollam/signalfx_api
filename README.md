@@ -15,3 +15,6 @@ Copy the dashboard ID to clone, then `python retrieve.py <DASHBOARD_ID>`.  A new
 
 ## Deploying dashboards
 Note the directory created above and then `python deploy.py <DIRECTORY>`.  All the charts in the directory will be created on SignalFx, followed by a dashboard with those charts.  The new dashboard ID will be returned.
+
+## Creating charts programmatically
+Edit `create_chart.py` to reflect a chart to create in SignalFx.  Running `python create_chart.py` will return the ID of the newly created chart.
